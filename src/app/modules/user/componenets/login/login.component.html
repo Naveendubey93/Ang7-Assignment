@@ -1,0 +1,39 @@
+
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+				<div class="user-input-group"> 
+					<span><img src="assets/images/icons/user.png"></span>
+						<span>
+							<input type="text" placeholder="User Name" required formControlName="username" id="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+						</span> 
+				</div>
+				<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <span *ngIf="f.username.errors.required">User Name is required </span>
+          </div>
+				<div class="user-input-group"> 
+					<span><img src="assets/images/icons/lock.png"></span>
+					 	<span>
+							<input type="password" placeholder="Password"  formControlName="password" id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+						</span>
+				</div>
+					  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+	              <span *ngIf="f.password.errors.required">Password is required</span>
+	          </div>
+        
+				<span class="message"></span>
+				<div class="toggle-group">
+					<div class="switchholder">
+						<label class="switch">
+							<input type="checkbox">
+							<span class="slider round"></span>
+						</label>
+						<span>Remember Me</span>
+					</div>
+				</div>
+    
+
+		<button type="submit" class="dummy-btn">LOGIN</button>
+		
+	</form>
+
+		<a class="forgot" href="forgot-password.html" title="Forgot Password">Forgot Password ?</a>
